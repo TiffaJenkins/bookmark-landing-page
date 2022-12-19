@@ -1,0 +1,480 @@
+//Navbar--------------------------------------------
+.main-container {
+    @include mainContainer;
+    //border: $buildBorder;
+
+    @include mobile {
+        @include mobileContainer;
+    }
+
+    .navbar {
+        @include flexAlignCenter;
+        @include flexSeperate;
+        padding: 15px 0 15px 0;
+        overflow: hidden;
+        //border: $buildBorder;
+
+        @include largeMobile {
+            @include flexColAlignStart; //THISSSSSSSSSS NEEEDED!!
+            padding: 40px 0 40px 0; 
+        }
+
+        @include large {
+            padding: 25px 0 25px 0;
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 2.58rem; //41.28px
+            right: 1.7rem; //27.2px
+            display: $getRid;
+            width: 40px;
+            padding-top: 0.625rem; //10px
+            padding-bottom: 0.625rem; //10px
+            transition: all 0.5s ease-in-out;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                display: flex;
+                right: 48px;
+
+                @include mobile {
+                    right: 35px;
+                }
+
+                @include fold {
+                    right: 25px;
+                }
+
+                .toggle-button_burger {
+                    height: 2px;
+                    width: 80%;
+                    background-color: hsl(0, 0%, 0%);
+                    border-radius: 10px;
+                    transition: all 0.5s ease-in-out;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        width: 80%;
+                        background-color: hsl(0, 0%, 0%);
+                        border-radius: 10px;
+                        transition: all 0.5s ease-in-out;
+                        transform: translateY(-8px);
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        width: 80%;
+                        background-color: hsl(0, 0%, 0%);
+                        border-radius: 10px;
+                        transition: all 0.5s ease-in-out;
+                        transform: translateY(8px);
+                    }
+                }
+
+                //animation------
+                &.open {
+
+                    .toggle-button_burger {
+                        transform: translate(-50px);
+                        background: transparent;
+
+                        &::before {
+                            transform: rotate(45deg) translate(35px, -35px);
+                        }
+
+                        &::after {
+                            transform: rotate(-45deg) translate(35px, 35px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-logo {
+            width: 16%;
+            height: 7%;
+            //border: $buildBorder;
+
+            @include tablet {
+                width: 6.875rem; //110px
+                height: 1.255rem; //20px
+            }
+
+            @include largeMobile {
+                width: 7.5rem; //120px
+                height: 1.375rem; //22px 
+            }
+        }
+
+        .nav-menu {
+            @include largeMobile {
+                display: $getRid;
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .nav-menu.active {
+            @include largeMobile {
+                display: flex;
+            }
+        }
+    
+        ul {
+            @include flexAlignCenter;
+            padding: 0;
+            list-style: $getRid;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                @include flexColAlignCenter;
+                position: relative;
+                width: 100%;
+                padding: 20px 0 140px 0;
+                background-color: $mainH1Color;
+                opacity: 0.8;
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                //border: $buildBorder;
+            }
+
+            //mobile nav icons------
+            .mobile-icon1 {
+                display: none;
+
+                @include largeMobile {
+                    display: block;
+                    position: absolute;
+                    bottom: 5%;
+                    left: 38%;
+                }
+            }
+
+            .mobile-icon2 {
+                display: none;
+
+                @include largeMobile {
+                    display: block;
+                    position: absolute;
+                    bottom: 5%;
+                    right: 38%;
+                }
+            }
+
+            li {
+                @include flexColAlignCenter;
+                
+                @include largeMobile {
+                    width: 100%;
+                    border-bottom: 1px solid $mainPColor;
+                    padding: 20px 0 20px 0;
+                }
+            }
+
+            .nav-item {
+                font-family: $mainFont;
+                font-size: 0.688rem; //11px
+                color: $mainH1Color;
+                font-weight: $reg;
+                letter-spacing: 1px;
+                text-decoration: $getRid;
+                margin-right: 2.813rem; //45px
+                //border: $buildBorder;
+
+                @include tablet {
+                    font-size: 0.625rem; //10px 
+                }
+
+                @include largeMobile {
+                    font-size: 1.125rem; //18px 
+                    font-weight: $reg;
+                    color: hsl(100, 100%, 100%);
+                    letter-spacing: 1px;
+                    margin-right: 0;
+                }
+
+                @include large {
+                    font-size: 0.875rem; //14px
+                }
+
+                &:hover {
+                    color: $buttonRed;
+                }
+            }
+
+            .nav-button {
+                border: 1px solid red;
+                border-radius: 0.188rem; //3px
+                background-color: $buttonRed;
+                font-family: $mainFont;
+                font-size: 0.688rem; //11px
+                text-decoration: $getRid;
+                letter-spacing: 1px;
+                color: hsl(100, 100%, 100%);
+                padding: 10px 28px 10px 28px;
+                box-shadow: 0 6px 4px -3px rgba(49, 49, 49, 0.285);
+
+                &:hover {
+                    background-color: hsl(100, 100%, 100%);
+                    color: $buttonRed;
+                }
+
+                @include tablet {
+                    font-size: 0.625rem; //10px 
+                    padding: 8px 20px 8px 20px;
+                }
+
+                @include largeMobile {
+                    border: 2px solid hsl(100, 100%, 100%);
+                    font-size: 1.125rem; //18px 
+                    color: hsl(100, 100%, 100%);
+                    background-color: rgba(49, 49, 49, 0.388);
+                    margin-top: 2.188rem; //35px
+                    width: 80%;
+                    text-align: center;
+                } 
+
+                @include large {
+                    font-size: 0.875rem; //14px
+                    padding: 12px 30px 12px 30px;
+                }
+            }
+        }  
+    }
+}  
+
+//Header info-----------------------------------------------------------------------------------------------
+.header-section {
+    position: relative;
+    padding: 3.125rem 0 3.125rem 0; //50px top and bottom
+
+    @include largeMobile {
+        padding: 25px 0 120px 0;
+    }
+
+    @include large {
+        padding: 50px 0 70px 0;
+    }
+
+    //blue div shape------
+    &::after {
+        content: "";
+        display: block;
+        width: 35%;
+        height: 280px;
+        position: absolute;
+        top: 140px;
+        right: 0;
+        background-color: $buttonBlue;
+        border-radius: 180px 0 0 180px;
+        z-index: -1;
+
+        @include tablet {
+            height: 220px;
+            top: 120px;
+        }
+
+        @include largeMobile {
+            min-width: 80%;
+            height: 180px;
+            top: 75px;
+        }
+
+        @include mobile {
+            height: 168px;
+        }
+
+        @include fold {
+            height: 135px;
+            top: 60px;
+        }
+
+        @include large {
+            height: 340px;
+            position: absolute;
+            top: 185px;
+            border-radius: 160px 0 0 160px;
+        }
+    }
+
+    .main-container {
+        @include mainContainer;
+
+        @include mobile {
+            @include mobileContainer;
+        }
+
+        .row {
+            position: relative;
+            
+            @include largeMobile {
+                @include reverseRowStack;
+            }
+
+            .col {
+
+                .main-h1 {
+                    font-family: $mainFont;
+                    font-size: 2.375rem; //38px
+                    font-weight: $bold;
+                    color: $mainH1Color;
+                    //border: $buildBorder;
+                    margin-top: 3.75rem; //60px
+                    margin-bottom: 1.375rem; //12px
+
+                    @include tablet {
+                        font-size: 1.875rem; //30px
+                    }
+
+                    @include largeMobile {
+                        text-align: center;
+                        margin-top: 2.5rem; //40px
+                    }
+
+                    @include fold {
+                        font-size: 1.563rem; //25px
+                    }
+
+                    @include large {
+                        font-size: 3.125rem; //50px
+                    }
+                }
+
+                .main-p {
+                    font-family: $mainFont;
+                    font-size: 0.875rem; //14px
+                    color: $mainPColor;
+                    line-height: 22px;
+                    padding-bottom: 0;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        text-align: center;
+                        font-size: 0.938rem; //15px 
+                        margin-bottom: 30px;
+                        line-height: 23px;
+                    }
+
+                    @include fold {
+                        font-size: 0.875rem; //14px
+                    }
+
+                    @include large {
+                        font-size: 1.25rem; //20px
+                        line-height: 1.75rem; //28px
+                        padding-bottom: 12px;
+                    }
+                }
+
+                .chrome-btn {
+                    display: inline-block;
+                    border: 2px solid $buttonBlue;
+                    border-radius: 0.188rem; //3px
+                    box-shadow: 0 6px 4px -3px rgba(49, 49, 49, 0.484);
+                    text-decoration: $getRid;
+                    font-family: $mainFont;
+                    font-size: 0.75rem; //12px
+                    font-weight: $bold;
+                    color:hsl(100, 100%, 100%);
+                    background-color: $buttonBlue;
+                    padding: 10px 18px 10px 18px;
+                    margin-right: 12px; 
+
+                    &:hover {
+                        color: $buttonBlue;
+                        background-color:hsl(100, 100%, 100%);
+                    }
+
+                    @include tablet {
+                        font-size: 0.5rem; //8px
+                        padding: 8px 18px 8px 18px;
+                    }
+
+                    @include largeMobile {
+                        font-size: 0.875rem; //14px
+                        padding: 14px 18px 14px 18px;
+                    }
+
+                    @include mobile {
+                        font-size: 0.813rem; //13px
+                        padding: 14px 14px 14px 14px;
+                        margin-right: 10px;
+                    }
+
+                    @include fold {
+                        font-size: 0.625rem; //10px
+                        padding: 10px 10px 10px 10px;
+                    }
+
+                    @include large {
+                        font-size: 0.938rem; //15px
+                        padding: 15px 28px 15px 28px;
+                    }
+                }
+
+                .firefox-btn {
+                    display: inline-block;
+                    border: 2px solid rgba(49, 49, 49, 0.08);
+                    border-radius: 0.188rem; //3px
+                    box-shadow: 0 6px 4px -3px rgba(49, 49, 49, 0.422);
+                    text-decoration: $getRid;
+                    font-family: $mainFont;
+                    font-size: 0.75rem; //12px
+                    font-weight: $bold;
+                    color: $mainH1Color;
+                    background-color: rgb(243, 240, 240);
+                    padding: 10px 18px 10px 18px;
+
+                    &:hover {
+                        color: $mainH1Color;
+                        background-color: hsl(100, 100%, 100%);
+                        border: 2px solid $mainH1Color;
+                    }
+
+                    @include tablet {
+                        font-size: 0.5rem; //8px
+                        padding: 8px 18px 8px 18px;
+                    }
+
+                    @include largeMobile {
+                        font-size: 0.875rem; //14px
+                        padding: 14px 18px 14px 18px;
+                        float: right;
+                    }
+
+                    @include mobile {
+                        font-size: 0.813rem; //13px
+                        padding: 14px 16px 14px 16px;
+                    }
+
+                    @include fold {
+                        font-size: 0.625rem; //10px
+                        padding: 10px 10px 10px 10px;
+                    }
+
+                    @include large {
+                        font-size: 0.938rem; //15px
+                        padding: 15px 28px 15px 28px;
+                    }
+                }
+            }
+
+            //Header image------
+            .col {
+
+                .intro-img {
+                    max-width: 125%;
+
+                    @include largeMobile {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

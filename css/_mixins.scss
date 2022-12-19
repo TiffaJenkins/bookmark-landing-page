@@ -1,0 +1,107 @@
+//main variables----------------------------------------
+$buildBorder: 1px solid red;
+$mainFont: 'Rubik', sans-serif;
+$mainH1Color: hsl(229, 31%, 21%);
+$mainPColor: hsl(229, 8%, 60%);
+$centerContainer: 0 auto;
+$getRid: none;
+$buttonRed: hsl(0, 94%, 66%);
+$buttonBlue: hsl(231, 69%, 60%);
+$bold: 500;
+$reg: 400;
+$thin: 300;
+
+//container mixins---------------------------------------
+@mixin mainContainer {
+    width: 80%;
+    margin: $centerContainer;
+}
+
+@mixin mobileContainer {
+    width: 80%;
+    margin: $centerContainer;
+}
+
+
+//layout mixins------------------------------------------
+//Align------
+@mixin flexAlignCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexColAlignCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flexColAlignStart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+//justify------
+@mixin flexJustCenter {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flexJustEnd {
+    display: flex;
+    justify-content: end;
+}
+
+@mixin flexJustAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin flexSeperate {
+    display: flex;
+    justify-content: space-between;
+}
+
+//responsive mixins--------------------------------------
+//Mobile stacking------
+@mixin rowStack {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin reverseRowStack {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+//width / sizes
+@mixin fold {
+    @media (max-width: 340px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
+@mixin largeMobile {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 820px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}

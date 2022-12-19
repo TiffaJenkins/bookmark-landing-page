@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.min.css">
+  <title>Frontend Mentor | Bookmark landing page</title>
+  <!--<style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>-->
+</head>
+
+
+<body>
+  <header>
+    <!----Navbar---->
+    <div class="main-container">
+      <nav class="navbar">
+        <img class="nav-logo" src="images/logo-bookmark.svg" alt="BookMark &copy;">
+
+        <!--hamburger-->
+        <div class="toggle-button">
+          <div class="toggle-button_burger"></div>
+        </div>
+
+        <div class="nav-menu">
+          <ul>
+            <li><a class="nav-item" href="#features">FEATURES</a></li>
+            <li><a class="nav-item" href="#">PRICING</a></li>
+            <li><a class="nav-item" href="#contact">CONTACT</a></li>
+            <a class="nav-button" href="#">LOGIN</a>
+            <img class="mobile-icon1" src="images/icon-facebook.svg" alt="facebook">
+            <img class="mobile-icon2" src="images/icon-twitter.svg" alt="Twitter">
+          </ul>
+        </div>
+
+      </nav>
+    </div><!--main container-->
+
+    <!--header info section-->
+    <section class="header-section">
+      <div class="main-container">
+        <div class="row">
+
+          <div class="col">
+            <h1 class="main-h1">A Simple Bookmark Manager</h1>
+
+            <p class="main-p">A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</p>
+
+            <a class="chrome-btn" href="#0">Get it on Chrome</a>
+            <a class="firefox-btn" href="#0">Get it on Firefox</a>
+          </div>
+
+          <div class="col">
+            <img class="intro-img" src="images/illustration-hero.svg" alt="Tablet">
+          </div>
+
+        </div><!--row-->
+      </div><!--main container-->
+    </section>
+
+  </header>
+
+  <!----section1 Info toggle---->
+  <main>
+    <section class="content-section1" id="features">
+      <div class="main-container">
+
+        <h2 class="main-h2">Features</h2>
+
+        <p class="main-p">Our aim is to make it quick and easy to access your favourite websites, Your bookmarks sync between your devices so you can access them on the go.</p>
+
+        <ul class="section1-ul">
+          <li><a class="tablinks active" id="bookmark" href="#0">Simple Bookmarking</a></li>
+          <li><a class="tablinks" id="searching" href="#0">Speedy Searching</a></li>
+          <li><a class="tablinks" id="sharing" href="#0">Easy Sharing</a></li>
+        </ul>
+
+      </div><!--main container-->
+
+      <!--tabs for toggle-->
+      <div class="main-container2">
+
+          <!--bookmarking-->
+          <div class="tabcontent bookmark active">
+            <div class="row">
+              <div class="col1">
+                <img class="section1-img" src="images/illustration-features-tab-1.svg" alt="Tab1">
+              </div>
+
+              <div class="col">
+                <h2 class="main-h2">Bookmark in one link</h2>
+
+                <p class="main-p">Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.</p>
+
+                <a class="section1-btn" href="#0">More Info</a>
+              </div>
+            </div><!--row-->  
+          </div><!--tabcontent-->    
+
+          <!--searching-->
+          <div class="tabcontent searching">
+            <div class="row">
+              <div class="col1">
+                <img class="section1-img2" src="images/illustration-features-tab-2.svg" alt="Tab2">
+              </div>
+
+              <div class="col">
+                <h2 class="main-h2">Intelligent search</h2>
+
+                <p class="main-p">Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.</p>
+
+                <a class="section1-btn" href="#0">More Info</a>
+              </div>
+            </div><!--row--> 
+          </div><!--tabcontent-->  
+
+          <!--sharing-->
+          <div class="tabcontent sharing">
+            <div class="row">
+              <div class="col1">
+                <img class="section1-img2" src="images/illustration-features-tab-3.svg" alt="Tab3">
+              </div>
+
+              <div class="col">
+                <h2 class="main-h2">Share your bookmarks</h2>
+
+                <p class="main-p">Easily share your bookmarks and collections with others. Create a shareable link you can create with a click of a button</p>
+
+                <a class="section1-btn" href="#0">More Info</a>
+              </div>
+            </div><!--row-->  
+          </div><!--tabcontent-->    
+
+      </div><!--main container-->
+    </section>
+
+    <!----section2 card intro---->
+    <section class="content-section2">
+      <div class="main-container">
+        <h2 class="main-h2">Download the extenstion</h2>
+        <p class="main-p">We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like to prioritize.</p>
+      </div>
+
+      <!--Card section-->
+      <div class="main-container">
+        <div class="row">
+
+          <!--card 1-->
+          <div class="col">
+            <div class="card card1">
+              <img class="card-img" src="images/logo-chrome.svg" alt="Chrome">
+              <div class="card-container">
+                <h4 class="card-h4">Add to Chrome</h4>
+                <p class="main-card-p">Minimum version 62</p>
+                <img class="card-dots-img" src="images/bg-dots.svg" alt="Dots">
+                <a class="card-btn" href="#0">Add & install extension</a>
+              </div><!--card container-->
+            </div><!--card-->
+          </div><!--col-->
+
+          <!--card 2-->
+          <div class="col">
+            <div class="card card2">
+              <img class="card-img" src="images/logo-firefox.svg" alt="Firefox">
+              <div class="card-container">
+                <h4 class="card-h4">Add to Firefox</h4>
+                <p class="main-card-p">Minimum version 55</p>
+                <img class="card-dots-img" src="images/bg-dots.svg" alt="Dots">
+                <a class="card-btn" href="#0">Add & install extension</a>
+              </div><!--card container-->
+            </div><!--card-->
+          </div><!--col-->
+  
+          <!--card 3-->
+          <div class="col">
+            <div class="card card3">
+              <img class="card-img" src="images/logo-opera.svg" alt="Opera">
+              <div class="card-container">
+                <h4 class="card-h4">Add to Opera</h4>
+                <p class="main-card-p">Minimum version 46</p>
+                <img class="card-dots-img" src="images/bg-dots.svg" alt="Dots">
+                <a class="card-btn" href="#0">Add & install extension</a>
+              </div><!--card container-->
+            </div><!--card-->
+          </div><!--col-->
+
+        </div><!--row-->
+      </div><!--main container-->
+    </section>
+
+    <!--section3 accordion intro-->
+    <section class="content-section3">
+      <div class="main-container">
+        <h2 class="main-h2">Frequently Asked Questions</h2>
+        <p class="main-p">Here are some of our FAQs. If you have any questions you'd like answered please feel free to email us.</p>
+
+        <!--accordion-->
+        <button class="accordion">What is Bookmark?<img class="arrow" src="images/icon-arrow.svg"></button>
+        <div class="panel">
+          <p>Bookmark is a great and easy way to save your bookmarks on the go! It's as easy as downloading our app and signing up with your email, the app provides details on how to get started.</p>
+        </div>
+
+        <button class="accordion">How can i request a new browser?<img class="arrow" src="images/icon-arrow.svg"></button>  
+        <div class="panel">
+          <p>It's easy to request a new browser! Just throw us an email 'bookmarkEasy@bookmark.com' and we will give you access to what you need within minutes.</p>
+        </div>
+
+        <button class="accordion">Is there a mobile app?<img class="arrow" src="images/icon-arrow.svg"></button>
+        <div class="panel">
+          <p>Yes! It's avaliable on IOS and android and its also FREE to download!</p>
+        </div>
+
+        <button class="accordion">What about other Chromium browsers?<img class="arrow" src="images/icon-arrow.svg"></button>
+        <div class="panel">
+          <p>Our team have worked very hard accross the board to make Bookmark compatible and We are pround to announce that Bookmark works with all avaliable browsers.</p>
+        </div>
+
+        <a class="accordion-btn" href="#0">More Info</a>
+      </div><!--main container-->
+    </section>
+
+    <!--section4-->
+    <section class="content-section4" id="contact">
+      <div class="main-container">
+        <p class="section4-p">35,000+ ALREADY JOINED</p>
+
+        <h2 class="section4-h2">Stay up-to-date with what we're doing</h2>
+
+        <input class="section4-input" for="email" type="text" placeholder="Enter your email address">
+        <a class="section4-btn" href="#0">Contact Us</a>
+      </div><!--main container-->
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="main-container">
+      <div class="row">
+
+        <div class="col1">
+          <img class="footer-logo" src="images/logo-bookmark.svg" alt="Bookmark">
+          <ul class="footer-ul">
+            <li><a class="footer-item" href="#features">FEATURES</a></li>
+            <li><a class="footer-item" href="#0">PRICING</a></li>
+            <li><a class="footer-item" href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <div class="icon-div">
+            <img class="footer-icon" src="images/icon-facebook.svg" alt="Facebook">
+            <img class="footer-icon" src="images/icon-twitter.svg" alt="Twitter">
+          </div>
+        </div>
+
+      </div><!--row-->
+    </div><!--main container-->
+    <!--<p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>-->
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,827 @@
+//toggle section-------------------------------------------------------------------------------------
+.content-section1 {
+    position: relative;
+    padding-bottom: 150px;
+
+    @include largeMobile {
+        padding-bottom: 100px;
+    }
+
+    @include large {
+        padding-bottom: 200px; 
+    }
+
+    //blue div shape------
+    &::after {
+        content: "";
+        display: block;
+        width: 45%;
+        height: 260px;
+        position: absolute;
+        top: 310px;
+        left: 0;
+        background-color: $buttonBlue;
+        border-radius: 0 180px 180px 0;
+        z-index: -1;
+
+        @include tablet {
+            top: 275px;
+            height: 225px;
+        }
+
+        @include largeMobile {
+            width: 68%;
+            top: 400px;
+        }
+
+        @include mobile {
+            width: 70%;
+            top: 420px;
+            height: 190px;
+        }
+
+        @include fold {
+            top: 455px;
+            height: 150px;
+        }
+
+        @include large {
+            width: 44%;
+            height: 355px;
+            top: 425px;
+        }
+    }
+
+    .main-container {
+        @include mainContainer;
+
+        @include largeMobile {
+            @include mobileContainer;
+        }
+
+        .main-h2 {
+            font-family: $mainFont;
+            color: $mainH1Color;
+            font-size: 1.375rem; //22px
+            font-weight: $bold;
+            text-align: center;
+            //border: $buildBorder;
+
+            @include large {
+                font-size: 1.875rem; //30px
+            }
+        }
+
+        .main-p {
+            font-family: $mainFont;
+            font-size: 0.75rem; //12px
+            color: $mainPColor;
+            width: 49%;
+            text-align: center;
+            line-height: 17px;
+            margin: $centerContainer;
+            padding-bottom: 30px;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                width: 100%;
+                font-size: 0.938rem; //15px
+                line-height: 23px;
+            }
+
+            @include large {
+                font-size: 1.25rem; //20px
+                line-height: 25px;
+                padding-bottom: 60px;
+            }
+        }
+
+        //UL toggle for tabs-------
+        .section1-ul {
+            @include flexJustAround;
+            max-width: 65%;
+            margin: $centerContainer;
+            list-style: $getRid;
+            padding: 0 0 1.25rem 0; //20px bottom
+            border-bottom: 1px solid $mainPColor;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                @include flexColAlignCenter;
+                max-width: 100%;
+                padding: 20px 0 20px 0;
+                border-bottom: $getRid;
+            }
+
+            li {
+                position: relative;
+                font-family: $mainFont;
+                font-size: 0.75rem; //12px
+                //border: $buildBorder;
+
+                @include largeMobile {
+                    border-bottom: 1px solid $mainPColor;
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px 0 10px 0;
+                }
+
+                a {
+                    color: hsl(228, 5%, 43%);
+                    text-decoration: $getRid;
+
+                    &.active {
+                        &::after {
+                            content: "";
+                            height: 3px;
+                            background-color: $buttonRed;
+                            width: 100%;
+                            position: absolute;
+                            left: 0px;
+                            bottom: -22px;
+        
+                            @include largeMobile {
+                                bottom: -3px;
+                                left: 25%;
+                                width: 50%;
+                                margin: 0 auto;
+                            }
+                        }        
+                    }
+
+                    @include largeMobile {
+                        font-size: 1rem; //16px
+                        padding: 10px 0 10px 0;
+                    }
+
+                    @include large {
+                        font-size: 1.125rem; //18px
+                    }
+
+                    &:hover {
+                        color: $mainH1Color;
+                        font-weight: $bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .tabcontent {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    //changing info from UL------
+    .main-container2 {
+        padding-top: 50px;
+        @include mainContainer;
+
+        @include largeMobile {
+            @include mobileContainer;
+        }
+
+        @include large {
+            padding-top: 75px;
+        }
+
+        .row {
+            @include flexAlignCenter;
+
+            .col1 {
+               @include flexJustEnd;
+
+               @include largeMobile {
+                   @include flexJustCenter;
+               }
+
+                .section1-img {
+                    direction: rtl;
+                    max-width: 100%;
+
+                    @include largeMobile {
+                        max-width: 100%;
+                    }
+                }
+
+                .section1-img2 {
+                    width: 85%;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        max-width: 100%;
+                        max-height: 75%;
+                    }
+                }
+            }
+
+            .col {
+                padding-left: 5rem; //80px
+
+                @include largeMobile {
+                    padding-left: 0;
+                }
+
+                .main-h2 {
+                    font-family: $mainFont;
+                    color: $mainH1Color;
+                    font-size: 1.375rem; //22px
+                    font-weight: $bold;
+                    text-align: left;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        text-align: center;
+                        padding-top: 30px;
+                    }
+
+                    @include large {
+                        font-size: 1.875rem; //30px
+                    }
+                }
+
+                .main-p {
+                    font-family: $mainFont;
+                    font-size: 0.75rem; //12px
+                    color: $mainPColor;
+                    width: 100%;
+                    line-height: 17px;
+                    text-align: left;
+                    padding-bottom: 15px;
+                    margin-bottom: 0;
+                    //border: $buildBorder;
+
+                    @include mobile {
+                        font-size: 0.938rem; //15px
+                        line-height: 23px;
+                        text-align: center;
+                    }
+
+                    @include large {
+                        font-size: 1.25rem; //20px
+                        line-height: 26px;
+                        padding-bottom: 25px;
+                    }
+                }
+
+                .section1-btn {
+                    display: inline-block;
+                    border: 2px solid $buttonBlue;
+                    border-radius: 0.188rem; //3px
+                    box-shadow: 0 6px 4px -3px rgba(49, 49, 49, 0.422);
+                    background-color: $buttonBlue;
+                    text-decoration: none;
+                    font-family: $mainFont;
+                    font-weight: $bold;
+                    color: hsl(100, 100, 100);
+                    font-size: 0.625rem; //10px
+                    padding: 8px 14px 8px 14px;
+
+                    &:hover {
+                        color: $buttonBlue;
+                        background-color:hsl(100, 100%, 100%);
+                    }
+
+                    @include largeMobile {
+                        display: $getRid;
+                    }
+
+                    @include large {
+                        font-size: 0.938rem; //15px
+                        padding: 12px 20px 12px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//card section---------------------------------------------------------------------------------------
+.content-section2 {
+    padding-bottom: 100px;
+
+    @include large {
+        padding-bottom: 140px;
+    }
+
+    //card info------
+    .main-container {
+        @include mainContainer;
+
+        @include largeMobile {
+            @include mobileContainer;
+        }
+
+        .main-h2 {
+            font-family: $mainFont;
+            font-size: 1.375rem; //22px
+            color: $mainH1Color;
+            font-weight: $bold;
+            text-align: center;
+            //border: $buildBorder;
+
+            @include large {
+                font-size: 1.875rem; //30px
+            }
+        }
+
+        .main-p {
+            font-family: $mainFont;
+            font-size: 0.75rem; //12px
+            color: $mainPColor;
+            line-height: 17px;
+            text-align: center;
+            width: 49%;
+            padding-bottom: 15px;
+            margin: $centerContainer;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                font-size: 0.875rem; //14px
+                line-height: 20px;
+                width: 100%;
+                padding: 2px 2px 35px 2px;
+            }
+
+            @include mobile {
+                font-size: 0.938rem; //15px
+                line-height: 23px;
+            }
+
+            @include large {
+                font-size: 1.25rem; //20px
+                line-height: 25px;
+                padding-bottom: 50px;
+            }
+        }
+    }
+
+    //cards styles 1, 2 + 3------
+    .main-container {
+        @include mainContainer;
+
+        @include largeMobile {
+            @include mobileContainer;
+        }
+
+        .row {
+
+            .col {
+                @include flexJustCenter;
+
+                .card {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                    transition: 0.3s;
+                    border-radius: 10px;
+                    width: 70%;
+                    text-align: center;
+                    //border: $buildBorder;
+
+                    &:hover {
+                        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                    }
+
+                    @include largeMobile {
+                        width: 85%;
+                    }
+
+                    @include large {
+                        width: 75%;
+                    }
+
+                    .card-img {
+                        display: block;
+                        width: 38%;
+                        height: 36%;
+                        margin: $centerContainer;
+                        padding-top: 15px;
+                        //border: $buildBorder;
+
+                        @include tablet {
+                            width: 48%;
+                        }
+
+                        @include large {
+                            width: 40%;
+                            height: 36%;
+                        }
+                    }
+                    
+
+                    .card-container {
+                        
+                        .card-h4 {
+                            font-family: $mainFont;
+                            font-size: 0.875rem; //14px
+                            color: $mainH1Color;
+                            font-weight: $bold;
+                            margin-bottom: 4px;
+                            //border: $buildBorder;
+
+                            @include largeMobile {
+                                font-size: 1.25rem; //20px
+                            }
+
+                            @include large {
+                                font-size: 1.25rem; //20px
+                                margin-bottom: 8px;
+                            }
+                        }
+
+                        .main-card-p {
+                            font-family: $mainFont;
+                            font-size: 0.625rem; //10px
+                            color: $mainPColor;
+                            width: 100%;
+                            margin-top: 5px;
+                            margin-bottom: 10px;
+                            //border: $buildBorder;
+
+                            @include largeMobile {
+                                font-size: 0.938rem; //15px
+                                margin-bottom: 18px;
+                            }
+
+                            @include large {
+                                font-size: 0.938rem; //15px
+                                margin-bottom: 25px;
+                            }
+                        }
+
+                        .card-dots-img {
+                            width: 100%;
+                        }
+
+                        .card-btn {
+                            display: inline-block;
+                            text-decoration: none;
+                            border: 2px solid $buttonBlue;
+                            border-radius: 0.188rem; //3px
+                            box-shadow: 0 6px 4px -3px rgba(49, 49, 49, 0.422);
+                            background-color: $buttonBlue;
+                            font-family: $mainFont;
+                            font-weight: $bold;
+                            color: hsl(100, 100, 100);
+                            font-size: 0.625rem; //10px    
+                            padding: 8px 20px 8px 20px; 
+                            margin: 12px 0 14px 0;
+
+                            &:hover {
+                                color: $buttonBlue;
+                                background-color:hsl(100, 100%, 100%);        
+                            }
+
+                            @include tablet {
+                                padding: 8px 4px 8px 4px;
+                            }
+
+                            @include largeMobile {
+                                font-size: 0.813rem; //13px
+                                padding: 12px 28px 12px 28px;
+                                margin: 17px 0 22px 0
+                            }
+
+                            @include fold {
+                                font-size: 0.75rem; //12px
+                                padding: 10px 16px 10px 16px;
+                            }
+
+                            @include large {
+                                font-size: 0.938rem; //15px
+                                padding: 12px 32px 12px 32px;
+                                margin: 18px 0 18px 0;
+                            }
+                        }
+                    }
+                }
+
+                //card placement using 2nd class------
+                .card1 {
+                    margin-left: 80px;
+                    height: 85%;
+
+                    @include tablet {
+                        margin-left: 62px;
+                    }
+
+                    @include largeMobile {
+                        margin: 0;
+                    }
+
+                    @include large {
+                        margin-left: 95px;
+                        height: 85%;
+                    }
+                }
+
+                .card2 {
+                   margin-top: 20px;
+                   height: 85%;
+
+                   @include largeMobile {
+                        margin-top: 30px;
+                   }
+                    
+                   @include large {
+                        margin-top: 30px; 
+                        height: 85%;
+                   }
+                }
+
+                .card3 {
+                    margin-top: 40px;
+                    margin-right: 80px;
+
+                    @include tablet {
+                        margin-right: 63px;
+                    }
+
+                    @include largeMobile {
+                        margin-top: 30px;
+                        margin-right: 0;
+                    }
+
+                    @include large {
+                        margin-top: 60px;
+                        margin-right: 95px;
+                        height: 85%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+//accordion section----------------------------------------------------------------------------------
+.content-section3 {
+    padding-bottom: 100px;
+
+    @include large {
+        padding-bottom: 160px;
+    }
+
+    .main-container {
+        @include mainContainer;
+        @include flexColAlignCenter;
+
+        @include largeMobile {
+            @include mobileContainer;
+        }
+
+        .main-h2 {
+            font-family: $mainFont;
+            font-size: 1.375rem; //22px
+            color: $mainH1Color;
+            font-weight: $bold;
+            text-align: center;
+            //border: $buildBorder;
+
+            @include large {
+                font-size: 1.875rem; //30px
+            }
+        }
+
+        .main-p {
+            font-family: $mainFont;
+            font-size: 0.75rem; //12px
+            color: $mainPColor;
+            line-height: 17px;
+            text-align: center;
+            width: 49%;
+            padding-bottom: 30px;
+            margin: $centerContainer;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                font-size: 0.875rem; //14px
+                line-height: 20px;
+                width: 100%;
+                padding: 2px 5px 35px 2px;
+            }
+
+            @include mobile {
+                font-size: 0.938rem; //15px
+                line-height: 23px;
+            }
+
+            @include large {
+                font-size: 1.25rem; //20px
+                line-height: 25px;
+                padding-bottom: 50px;
+            }
+        }
+
+        //accordion style------
+        .accordion {
+            position: relative;
+            background-color:hsl(100, 100%, 100%);
+            font-family: $mainFont;
+            color: $mainH1Color;
+            width: 45%;
+            text-align: left;
+            border: none;
+            //border-top: 1px solid $mainPColor;
+            border-bottom: 1px solid $mainPColor;
+            padding: 14px 0 14px 0;
+            transition: 0.4s;
+
+            .arrow {
+                position: absolute;
+                right: 2%;
+
+                @include fold {
+                    right: 0;
+                }
+            }
+
+            &:hover {
+                color: $buttonRed;
+                cursor: pointer;
+            }
+
+            @include largeMobile {
+                width: 100%;
+            }
+
+            @include fold {
+                font-size: 10.5px;
+            }
+
+            @include large {
+                font-size: 1.25rem; //20px
+                padding: 20px 0 20px 0;
+            }
+        }
+
+        .accordion.active {
+            color: $buttonRed;
+        }
+
+        //panel style------
+        .panel {
+            width: 45%;
+            font-family: $mainFont;
+            font-size: 0.688rem; //12px
+            color: $mainPColor;
+            line-height: 20px;
+            text-align: left;
+            overflow: hidden;
+            margin: $centerContainer;
+            display: none;
+
+            @include largeMobile {
+                width: 100%;
+            }
+
+            @include large {
+                font-size: 1rem; //16px
+                line-height: 24px;
+            }
+        }
+
+        .accordion-btn {
+            display: inline-block;
+            border: 2px solid $buttonBlue;
+            border-radius: 0.188rem; //3px
+            box-shadow: 0 6px 4px -3px rgba(49, 49, 49, 0.422);
+            background-color: $buttonBlue;
+            text-decoration: none;
+            font-family: $mainFont;
+            font-weight: $bold;
+            color: hsl(100, 100, 100);
+            font-size: 0.625rem; //10px
+            padding: 8px 14px 8px 14px;
+            margin-top: 40px;
+
+            &:hover {
+                color: $buttonBlue;
+                background-color:hsl(100, 100%, 100%);        
+            }
+
+            @include largeMobile {
+                font-size: 0.75rem; //12px
+                padding: 10px 20px 10px 20px;
+            }
+
+            @include large {
+                font-size: 0.938rem; //15px
+                padding: 12px 20px 12px 20px;
+            }
+        }
+    }
+}
+
+//section 4------------------------------------------------------------------------------------------
+.content-section4 {
+    background-color: $buttonBlue;
+    padding: 50px 0 50px 0;
+    text-align: center;
+
+    @include large {
+        padding: 50px 0 60px 0;
+    }
+
+    .main-container {
+        @include mainContainer;
+
+        @include largeMobile {
+            @include mobileContainer;
+        }
+
+        .section4-p {
+            font-family: $mainFont;
+            font-size: 0.563rem; //8px
+            color:hsl(100, 100%, 100%);
+            font-weight: $reg;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                font-size: 0.688rem; //11px
+                letter-spacing: 4px;
+                margin-bottom: 10px;
+            }
+
+            @include large {
+                font-size: 0.688rem; //11px
+                letter-spacing: 4px;
+            }
+        }
+
+        .section4-h2 {
+            font-family: $mainFont;
+            font-size: 1.375rem; //22px
+            color:hsl(100, 100%, 100%);
+            font-weight: $bold;
+            width: 40%;
+            padding-bottom: 20px;
+            margin: $centerContainer;
+            //border: $buildBorder;
+
+            @include largeMobile {
+                width: 100%;
+                padding-bottom: 25px;
+            }
+
+            @include large {
+                font-size: 1.875rem; //30px
+                padding-bottom: 30px;
+            }
+        }
+
+        .section4-input {
+            width: 26%;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            font-family: $mainFont;
+            font-size: 0.625rem; //10px
+            color: rgb(230, 225, 225);
+
+            @include largeMobile {
+                width: 100%;
+                font-size: 0.813rem; //13px
+                padding: 13px;
+            }
+
+            @include large {
+                width: 25%;
+                font-size: 0.875rem; //14px
+                padding: 13px;
+            }
+        }
+
+        .section4-btn {
+            display: inline-block;
+            background-color: $buttonRed;
+            font-family: $mainFont;
+            font-size: 0.625rem; //10px
+            color: hsl(100, 100%, 100%);
+            font-weight: $bold;
+            border: 2px solid $buttonRed;
+            border-radius: 0.188rem; //3px
+            box-shadow: 0 6px 4px -3px rgba(49, 49, 49, 0.422);
+            text-decoration: none;
+            padding: 7.5px 12px 7.5px 12px;
+            margin-left: 6px;
+
+            @include largeMobile {
+                display: block;
+                font-size: 0.813rem; //13px
+                padding: 12px 0px 12px 0px;
+                margin-left: 0;
+                margin-top: 14px;
+            }
+
+            @include large {
+                font-size: 0.813rem; //13px
+                padding: 12px 18px 10.8px 18px;
+            }
+        }
+    }
+}

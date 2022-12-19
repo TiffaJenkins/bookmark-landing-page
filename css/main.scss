@@ -1,0 +1,36 @@
+@import "./mixins";
+@import "./header";
+@import "./content";
+@import "./footer";
+
+/*--------------------------------Fixes---------------------------------*/
+/*----------------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------reuseable containers-------------------------*/
+/*-----------------------------for layout-------------------------------*/
+.row {
+    display: flex;
+
+    @include largeMobile {
+        @include rowStack;
+    }
+}
+
+.col {
+    flex: 1;
+    //border: $buildBorder;
+}
+
+//col for no added padding/margin (if i added padding/margin to .col and dont want it in next col)------
+.col1 {
+    flex: 0 0 50%;
+    //border: $buildBorder;
+}

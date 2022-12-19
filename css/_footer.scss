@@ -1,0 +1,113 @@
+//footer section--------------------------------------------------------------------------------------------
+.footer-section {
+    background-color: $mainH1Color;
+    padding: 10px 0 10px 0;
+
+    @include largeMobile {
+        padding: 10px 0 20px 0;
+    }
+
+    @include large {
+        padding: 14px 0 14px 0;
+    }
+
+    .main-container {
+        @include mainContainer;
+
+        @include largeMobile {
+            @include mobileContainer;
+        }
+
+        .row {
+            
+            .col1 {
+                @include flexAlignCenter;
+
+                @include largeMobile {
+                    @include flexColAlignCenter;
+                }
+
+                .footer-logo {
+                    filter: grayscale(400%) brightness(500%) contrast(200%);
+                    height: 40%;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        width: 40%;
+                        padding-top: 20px;
+                    }
+
+                    @include large {
+                        width: 30%;
+                        height: 55%;
+                    }
+                }
+
+                .footer-ul {
+                    display: flex;
+                    list-style: none;
+                    //border: $buildBorder;
+
+                    @include largeMobile {
+                        @include flexColAlignCenter;
+                        padding: 2px 0 0 0;
+                    }
+
+                    @include large {
+                        padding-left: 80px;
+                    }
+
+                    li {  //gap between footer-items on mob nav (needed li tag)
+                        @include largeMobile {
+                            margin-bottom: 12px;
+                        }
+                    }
+
+                    .footer-item {
+                        font-family: $mainFont;
+                        font-size: 0.563rem; //9px
+                        color: hsl(100%, 100%, 100);
+                        font-weight: $reg;
+                        letter-spacing: 1px;
+                        text-decoration: none;
+                        margin-left: 20px;
+                        //border: $buildBorder;
+
+                        @include largeMobile {
+                            margin-left: 0;
+                            margin-bottom: 10px;
+                        }
+
+                        @include large {
+                            font-size: 0.75rem; //12px
+                        }
+                    }
+                }
+            }
+
+            .col {
+                @include flexAlignCenter;
+                @include flexJustEnd;
+
+                @include largeMobile {
+                    @include flexJustCenter;
+                }
+
+                .icon-div {
+                    padding: 0;
+                    //border: $buildBorder;
+
+                    .footer-icon {
+                        width: 20%;
+                        margin-left: 20px;
+                        //border: $buildBorder;
+
+                        @include large {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
